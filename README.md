@@ -1,45 +1,85 @@
-# 📊 Customer Churn Prediction
+# 📊 Customer Churn Prediction Using Behavioral Analysis
 
 ## 📝 Project Overview
-Customer churn is a critical metric for businesses, as retaining an existing customer is often much more cost-effective than acquiring a new one. This project involves building a Machine Learning model to predict customer churn based on historical data, customer demographics, and account information. 
 
-By identifying customers who are at a high risk of leaving, businesses can proactively offer incentives, improve customer service, and implement targeted retention strategies.
+Customer Churn Prediction Using Behavioral Analysis is an AI-assisted web analytics platform designed to help users understand customer behavior and identify patterns associated with churn.
 
-## 🎯 Objectives
-* **Analyze** customer data to discover key indicators and trends associated with churn.
-* **Preprocess** and clean the data for machine learning applications (handling missing values, encoding categorical variables, etc.).
-* **Train** predictive models to accurately classify whether a customer will churn.
-* **Evaluate** model performance using appropriate metrics (Accuracy, Precision, Recall, F1-Score).
+The system allows users to upload customer datasets and supporting documentation, perform automated data profiling and preprocessing, explore statistical patterns, generate context-aware business insights using Google Gemini, and visualize relationships between customer features.
 
-## 🛠️ Tech Stack & Tools
-* **Programming Language:** Python
-* **Data Manipulation & Analysis:** Pandas, NumPy
-* **Data Visualization:** Matplotlib, Seaborn
-* **Machine Learning:** Scikit-Learn, [Add others if applicable, e.g., XGBoost, LightGBM]
-* **Environment:** Jupyter Notebook / [Insert your IDE]
+The platform combines data processing, Exploratory Data Analysis (EDA), Generative AI, and interactive visualization into a unified workflow, making customer analytics more accessible to both technical and non-technical users.
 
-## 📂 Dataset
-* **Source:** [Insert Source, e.g., Kaggle Telco Customer Churn Dataset / Custom Company Data]
-* **Description:** The dataset contains [Insert number] records and [Insert number] features, including customer demographics, account information (e.g., tenure, contract type), and the target variable (`Churn`).
+> **Note:** The current implementation focuses on behavioral analysis, data preprocessing, EDA, AI-driven insights, and visualization. Integration of trained machine learning models for real-time churn prediction is planned as a future enhancement.
 
-## ⚙️ Project Pipeline
-1. **Exploratory Data Analysis (EDA):** Visualizing distributions, finding correlations, and understanding the impact of different features on the churn rate.
-2. **Data Preprocessing:** 
-   * Handling missing or null values.
-   * Feature scaling (Standardization/Normalization).
-   * Encoding categorical features (One-Hot Encoding, Label Encoding).
-3. **Model Building:** Training various classification algorithms such as:
-   * Logistic Regression
-   * Random Forest Classifier
-   * [Insert other models you used, e.g., Decision Trees, Support Vector Machines]
-4. **Model Evaluation:** Comparing models based on their classification reports and confusion matrices to minimize false negatives (failing to identify a churning customer).
+---
 
-## 📈 Results & Conclusion
-* The **[Insert Best Model Name]** model performed the best with an accuracy of **[Insert Accuracy, e.g., 85%]** and an F1-score of **[Insert F1-Score]**.
-* Key features driving churn were identified as **[Insert Top 2-3 Features, e.g., Month-to-month contracts, High Monthly Charges, and Lack of Tech Support]**.
-* [Add any brief business recommendation based on your findings].
+## 🎯 Key Features
 
-## 🚀 How to Run the Project
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/SathwikVeluri/CHURN-PREDICTION.git](https://github.com/SathwikVeluri/CHURN-PREDICTION.git)
+- 📂 **Multi-Format Data Ingestion**
+  - Supports CSV, JSON, XLSX, and PDF files.
+  - Converts uploaded data into standardized formats for analysis.
+  - Extracts textual information from supporting documentation.
+
+- 🔍 **Automated Dataset Profiling**
+  - Generates automated EDA reports using `ydata-profiling`.
+  - Analyzes data types, missing values, distributions, and correlations.
+  - Uses caching to avoid unnecessary report regeneration.
+
+- 🧹 **Interactive Data Preprocessing**
+  - Detects missing values.
+  - Supports mean, median, mode, interpolation, forward-fill, and backward-fill strategies.
+  - Applies appropriate handling strategies for numerical and categorical data.
+
+- 🤖 **AI-Driven Business Insights**
+  - Uses Google Gemini to analyze dataset documentation and metadata.
+  - Generates context-aware churn-related insights.
+  - Identifies relationships between relevant customer attributes.
+
+- 📈 **Dynamic Visualization**
+  - Automatically classifies numerical and categorical features.
+  - Recommends suitable visualization types based on feature combinations.
+  - Generates charts such as histograms, scatter plots, heatmaps, and categorical visualizations.
+
+- 👁️ **Vision AI Relationship Analysis**
+  - Uses Gemini's multimodal capabilities to analyze generated visualizations.
+  - Determines whether relationships between features are strong, weak, or absent.
+  - Provides human-readable explanations of detected relationships.
+
+- ⚡ **FastAPI Backend**
+  - Modular REST API architecture.
+  - Supports asynchronous processing.
+  - Handles API errors and external Gemini API rate limits.
+  - Provides generated visualization files through API endpoints.
+
+- 🖥️ **Interactive React Dashboard**
+  - Provides a responsive web-based interface.
+  - Allows users to upload datasets and documentation.
+  - Displays dataset summaries, EDA results, AI-generated insights, and visualizations.
+
+---
+
+## ⚙️ System Workflow
+
+```text
+User Uploads Dataset + Documentation
+                ↓
+       Data Ingestion Layer
+                ↓
+      Dataset Profiling / EDA
+                ↓
+       Data Preprocessing
+                ↓
+     Metadata & Context Analysis
+                ↓
+       Google Gemini API
+                ↓
+     Business Insight Generation
+                ↓
+      Visualization Recommendation
+                ↓
+       Chart Generation
+                ↓
+       Vision AI Analysis
+                ↓
+     Insights + Visualizations
+                ↓
+          React Dashboard
